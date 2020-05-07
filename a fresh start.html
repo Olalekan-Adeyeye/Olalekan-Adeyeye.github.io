@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Brainy Quiz</title>
+      <meta name="viewport" content="width=device width,  initial-scale=1.0">
+	<link rel="stylesheet" href="index.css">
+		
+	
+		<style>
+			
+			body{
+		 font-family:sen, arial,helvetica;
+  	margin:0;
+  	width:100%;
+   	height:100vh;
+			}
+			
+			.container{
+				margin:0;
+					display:flex;
+   	flex-direction:column;
+   	align-items:center;
+   	justify-content: center;
+   	width:100%;
+   	height:100vh;
+			}
+			
+			.wrapper{
+        margin: 0 auto;
+				padding:5px 10px;
+			}
+			
+      .wrap-all{
+        display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    margin: 0px 10px;
+      }
+      
+			
+			  .choice-container{
+   	display:flex;
+   	flex-direction:row;
+   	align-items:center;
+     justify-content: center;
+   	margin:1.5rem auto;
+   	width:300px;
+   	font-size:1.5rem;
+   	background:white;
+   	color:#6200EA;
+   	border-radius:5px;
+   }
+   
+   .choice-container:hover{
+      border:1px solid transparent;
+    }
+    
+  
+      	.third{
+      		background:white;
+      		padding:15px;
+      		display:none;
+      		flex-direction:column;
+      		align-items:center;
+      		justify-content:center;
+      		position:absolute;
+      		width:250px;
+      		height:150px;
+      		top:0;
+      		left:0;
+      		right:0;
+      		margin:50% auto;
+      		border-radius:5px;
+      		font-size:1rem;
+      	}
+      	.third h2{
+      		font-size:2rem;
+      	}
+      	#alert{
+      		color:#6200EA;
+      	}
+      	#ok{
+      		display:flex;
+      		flex-direction:column;
+      		align-items:center;
+      		justify-content:center;
+      		width:60px;
+      		height:30px;
+      		outline:none;
+      		border:2px solid #6200EA;
+      		color:#6200EA;
+      		font-size:15px;
+      		background:white;
+      		border-radius:5px;
+      	}
+      	#ok:hover{
+      		color:white;
+      		background:#6200EA;
+      		border:2px solid white;
+      	}
+   
+   h2{
+   	font-size:2rem;
+   }
+   
+   .choice-text1,.choice-text2,.choice-text3,.choice-text4{
+   	background:tranparent;
+   	padding:1rem;
+   	margin:0;
+   	width:100%;
+   }
+   
+   .option{
+   	border-right:2px solid transparent;
+   	margin:0;
+   	padding: 1rem;
+   	width:2rem;
+   	text-align:center;
+   }
+   
+   .button{
+		display:flex;
+   	flex-direction:row;
+   	justify-content:center;
+   	align-items:center;
+   	border:2px solid white;
+   	float:right;
+   	border-radius:5px;
+   	width:100px;
+   }
+   
+   button{
+   	background:#6200EA;
+   	color:white;
+   	padding:5px 15px;
+   	text-align:center;
+   	width:100px; 
+   	height:30px;
+   	border:0px solid #6200EA;
+   	font-family:sen, arial,helvetica;
+   	float:right;
+   	border-radius:2px;
+   }
+   
+   button:hover{
+   	outline:none;
+   }
+                
+   .count{
+   	display:flex;
+   	flex-direction:row;
+   	justify-content:space-between;
+   	align-items:center;
+   	text-align:center;
+   }
+   
+   .small{
+   	font-size:1.5rem;
+   }
+   
+   .correct{
+   	background:#00C853;
+   	color:white;
+   	animation:blink .5s infinite linear;
+   }
+   
+   @keyframes blink{
+   	0%{background:#00C853;}
+   	50%{background:white;}
+   	100%{background:#00C853;}
+   }
+   
+   .wrong{
+   	background:#D50000;
+   	color:white;
+		}
+   
+   #choices div.disabled{
+   	pointer-events:none;
+   }
+   
+   #next{
+   	font-weight:900;
+   }
+   
+   .all{
+      			width:100vw;
+      			height:100vh;
+      			display:none;
+				flex-direction:column;
+				justify-content:center;
+				align-items:center;
+      		}
+      		
+      		.wrap{
+      		display:flex;
+				flex-direction:column;
+				justify-content:center;
+				align-items:center;
+      		}
+      		
+      		.over-out{
+      			font-size:3rem;
+      		}
+      		
+      		.board{
+      			font-size:2rem;
+      			text-align:center;
+      		}
+      		
+      		.reload{
+				color:white;
+				text-decoration:none;
+				border:3px solid white;
+				padding:10px;
+				font-size:15px;
+				border-radius:5px;
+				background:#6200EA;
+				margin-bottom:5px;
+      		} 
+      		
+              
+      .reload:hover{
+          background:white;
+          border:1px solid #6200EA;
+          color:#6200EA;
+          transition-duration:0.5s;
+          transform:translate(0px, -2px);
+          box-shadow:0px 0px 10px 0px white;      
+                }
+                
+  @media screen and (min-width:560px){
+  	
+   .container{
+  		width:600px;
+  		margin:0 auto;
+  	}
+   
+  	.count h1{
+  		font-size:5rem;
+  	}
+  	
+  	.question{
+  		font-size:2rem;
+  	}
+  	
+  	.choice-container{
+  		width:600px;
+  		margin: 1rem auto;
+  	}
+  	
+  	button{
+  		width:200px;
+  		height:50px;
+  		font-size:2rem;
+  		}
+
+  .button{
+      width:200px;
+      height:50px;
+      font-size:2rem;
+      border:5px solid white;
+   }
+   
+  	.option, .text{
+  		height:40px;
+  	}
+  	
+  	.option{
+  		font-size:2rem;
+  		padding:1rem 2rem;
+  		display:flex;
+  		flex-direction:column;
+  		align-items:center;
+  		justify-content:center;
+  	}
+  	
+  	.text{
+  		display:flex;
+  		flex-direction:row;
+  		font-size:2rem;
+  		align-items:center;
+  		padding-top:1rem;
+  		padding-bottom:1rem;
+  		padding-left:20px;
+  	}
+  	
+  	.third{
+  		margin: 16% auto;
+  	}
+  }
+			
+			
+			.help h2{
+				display:flex;
+  				flex-direction:column;
+  				align-items:center;
+  				justify-content:center;
+				font-size:2rem;
+				border: 2px solid #6200EA;
+				border-radius:50px;
+				padding:5px;
+				height:20px;
+				width:20px;
+				background:white;
+			}
+			
+		</style>
+		
+ 
+   </head>
+   <body>
+   	
+   
+   	
+   	
+  <div class = "container">
+    <div class="wrap-all">
+  	
+   	
+  	<div class="wrapper">
+	
+   	<div class="count">
+   		
+   	<div class="count-div">
+   	<h2><span class="small">Question</span><br><span id="count"></span> of <span id="questionLength"></span></h2>
+   	</div>
+   	
+   	<div class="help">
+  				<h2 id="help">?</h2>
+  			</div>
+  		
+   	
+   	<div class="count-div">
+   	<h2><span class="small">Score</span><br><span class="score"></span>/<span class="total"></span></h2>
+   	</div>
+   	
+   	</div>
+	
+		<h2 class ="question" id ="question"></h2>
+		<div id="choices">
+	
+  		<div class="choice-container" id="0" onclick="check(this)">
+  			<p class="option">A</p>
+  			<p class="choice-text1 text" id="choice-text1"></p>
+  			</div>
+  			
+  			
+  			<div class="choice-container" id="1" onclick="check(this)">
+  			<p class="option">B</p>
+  			<p class="choice-text2 text" id="choice-text2"></p>
+  			</div>
+  			
+  			<div class="choice-container" id="2" onclick="check(this)">
+  			<p class="option">C</p>
+  			<p class="choice-text3 text" id="choice-text3"></p>
+  			</div>
+  			
+  			<div class="choice-container" id="3" onclick="check(this)">
+  			<p class="option">D</p>
+  			<p class="choice-text4 text" id="choice-text4"></p>
+  			</div>
+  			
+  			</div>
+  			
+  			
+  			
+  			<div class="button">
+  				<button id="next" onclick="next()">NEXT</button>
+  			</div>
+  			
+  			
+  			</div>
+  			</div>
+      </div>
+  			
+  			<div class="all">
+   		<div class="wrap">
+   		<h2 class="over-out">GAME OVER</h2>
+   		
+   		<img id="image" src="" alt="" width="50px">
+   		
+   		
+   		
+   		<h2 class="board">Score:  <span class="got"></span>/<span class="over"></span><br>
+   		<span id="award"></span>
+   		</h2>
+      <a class="reload" href="menu.html">Main Menu</a>
+     	<a class="reload" href="a fresh start.html">Play Again</a>
+     	</div>
+     	</div>
+     	
+  
+      			<div class="third">
+      				<img src="https://image.flaticon.com/icons/svg/564/564619.svg" alt="warning" width="50px">
+      				<h2 id="alert">One step at a time!</h2>
+      				<button id="ok">OK</button>
+      			</div>
+      		
+      	
+  			
+  			
+  			
+  			
+  			
+  			
+	<script>
+  			var questions = [
+{
+	question:"Who lost to Donald Trump in the American Presidential Election?",
+	
+option:["Narendra Modi", "Emmanuel Macron", "Kim Jong Il", "Hilary Clinton"],
+answer: 3
+	},
+
+{
+	question:"In 2019, Coronavirus was first detected in",
+option:["Silicon Valley, USA", "Wuhan, China", "Gangnam, South Korea", "Kuala Lumpur, Malaysia"], 
+answer: 1
+},
+
+
+{
+	question:"Which country has the nickname \"Uncle Sam\"?",
+option:["Samoa", "Russia", "USA", "England"], 
+answer: 2
+},
+
+
+{
+	question:"The Bermuda Triangle is also known as",
+option:["The Devil's Triangle", "Valley of the Deads", "The Apocalypse Zone", "Earth's Paradise"],
+answer: 0
+},
+
+
+{
+	question:"India is famous for her",
+option:["Food culture", "Tourism centers", "Beautiful women", "Film Industry"],
+answer:3
+}
+
+];
+
+
+var images = ["https://image.flaticon.com/icons/svg/743/743243.svg","https://image.flaticon.com/icons/svg/742/742773.svg"];
+
+var question = document.getElementById("question");
+var option1 = document.getElementById("choice-text1");
+ var option2 = document.getElementById("choice-text2");
+ var option3 = document.getElementById("choice-text3");
+  var option4 = document.getElementById("choice-text4");
+  var count = document.getElementById("count");
+  var questionLength = document.getElementById("questionLength");
+  var choices = document.querySelector("#choices").children;
+  var score = document.querySelector(".score");
+  var total = document.querySelector(".total");
+var button = document.querySelector(".button");
+var container = document.querySelector(".container");
+var got = document.querySelector(".got");
+var over = document.querySelector(".over");
+var all = document.querySelector(".all");
+var third = document.querySelector(".third");
+var ok = document.querySelector("#ok");
+var image = document.querySelector("#image");
+var second = document.querySelector(".second");
+var ok2 = document.querySelector("#ok2");
+var help = document.querySelector("#help");
+var award = document.querySelector("#award");
+
+  
+  var qIndex = 0;
+  var scoreCount = 0;
+  var num = 0;
+  questionLength.innerHTML = questions.length;
+  score.innerHTML = 0;
+  total.innerHTML = questions.length;
+  over.innerHTML = questions.length;
+  var number = 0;
+  
+  
+  function loadQuestion(){
+  	
+  	count.innerHTML = num + 1;
+  	 question.innerHTML = questions[qIndex].question;
+  	 option1.innerHTML = questions[qIndex].option[0];
+  	 option2.innerHTML = questions[qIndex].option[1];
+  	 option3.innerHTML = questions[qIndex].option[2];
+  	 option4.innerHTML = questions[qIndex].option[3];
+  num++;
+  	 }
+  	 
+  
+  function check(element){
+  	if (element.id == questions[qIndex].answer){
+  			element.classList.add("correct");
+  			score.innerHTML = scoreCount += 1;
+  			got.innerHTML = number += 1;
+  	}
+  	else{
+  		element.classList.add("wrong");
+  		score.innerHTML = scoreCount += 0;
+  		got.innerHTML = number += 0;
+  	}
+  	
+  	disabledChoices()
+  	if(got.innerHTML<=2){
+  			image.src = images[0];
+  			award.innerHTML = "All brawns and no ....."
+  		}
+  		else if(got.innerHTML>=3){
+  			image.src = images[1];
+  			award.innerHTML = "So brainy!"
+  		}
+  }
+  
+  
+  function disabledChoices(){
+  	for(var i=0; i<choices.length; i++){
+  		choices[i].classList.add("disabled");
+  		
+  		if(choices[i].id==questions[qIndex].answer){
+  			choices[i].classList.add("correct");
+  		}
+  	}
+  	
+  	}
+  	
+  	function enableOptions(){
+  		for(var i=0; i<choices.length; i++){
+  			choices[i].classList.remove("disabled","wrong","correct");
+  		}
+  	}
+  	
+  	
+  	function validate(){
+  			if(choices[0].classList.contains("disabled")&& third.style.display!="flex"){
+  		qIndex++;
+  	 question.innerHTML = questions[qIndex].question;
+  	 option1.innerHTML = questions[qIndex].option[0];
+  	 option2.innerHTML = questions[qIndex].option[1];
+  	 option3.innerHTML = questions[qIndex].option[2];
+  	 option4.innerHTML = questions[qIndex].option[3];
+  	 enableOptions();
+  	 count.innerHTML = ++num;
+  		gameOver();
+  		}
+  		
+  		else{
+  				for(var i=0; i<choices.length; i++){
+  		choices[i].classList.add("disabled");
+  		}
+  			third.style.display = "flex";
+  			count.innerHTML = num += 0;
+  		} 
+  		}
+ 
+  		function gameOver(){
+  			if (qIndex >= questions.length){
+  				
+  	if(choices[0].classList.contains("disabled")){
+  				container.style.display = "none";
+  				all.style.display = "flex";
+  				third.style.display = "none";
+  				}
+  			}
+  		}
+  		
+  		
+  		function hide(){
+  				third.style.display = "none";
+  				for(var i=0; i<choices.length; i++){
+  		choices[i].classList.remove("disabled");
+  			}
+  			}
+  			
+  			function instruct(){
+  			alert("You have only a chance at selecting the correct answer. Please think carefully!")
+  			}
+  			button.addEventListener('click', gameOver);
+  ok.addEventListener('click', hide)	;
+  help.addEventListener('click',instruct);
+  			
+  			function next()	{
+  				validate();
+  				
+  			}
+  				
+  				window.onload = function(){
+  					loadQuestion()
+  				}
+  				
+  			
+  		</script>  	
+      
+   </body>
+   
+</html>
