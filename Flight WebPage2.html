@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Flight WebPage</title>
+				<meta name="viewport" content="width=device width,  initial-scale=1.0">
+					
+					<link href="//db.onlinewebfonts.com/c/a156ca0cab1c4a0b79463ed53604bac6?family=Radikal" rel="stylesheet" type="text/css"/>
+					
+					<style>
+						@import url('https://fonts.googleapis.com/css?family=Sen&display=swap');
+						@import url(//db.onlinewebfonts.com/c/605c1c612570275f24508913462da771?family=Radikal);
+						
+						:root{
+							background:#F0F0F0;
+							color:#272727;
+							box-sizing:border-box;
+							font-family:'radikal', sen,  arial, helvetica;
+						}
+						body{
+							margin:0;
+						}
+						.container{
+							background:white;
+							margin:10px;
+							border:2px solid #FAFAFA;
+			 				border-radius:20px;
+							box-shadow:0px 0px 10px 1px #BDBDBD;
+							width:300px;
+						}
+						.travel{
+							width:230px;
+							display:block;
+							padding-top:20px;
+							margin-top:5px;
+							margin-right:auto;
+							margin-left:auto;
+							}
+						.column{
+								background:white;
+								border-radius:20px 20px 0px 0px;
+								
+						}
+						.icon{
+							width:15px;
+							margin-right:5px;
+							
+						}
+						.love{
+							padding:0px 20px;
+						}
+						.text{
+							opacity:0.5;
+							font-size:13px;
+						}
+						.from{
+							display:flex;
+							flex-direction:column;
+							justify-content:center;
+							border-radius:10px;
+							padding:0px 10px;
+							margin-bottom:20px;
+							height:70px;
+							box-shadow:1px 3px 10px 1px #BDBDBD;
+						}
+						.from p{
+							margin-bottom:-15px;
+							display:flex;
+							flex-direction:row;
+							align-items:center;
+						}
+						.wall{
+							display:flex;
+							flex-direction:row;
+							justify-content:flex-start;
+							align-items:center;
+							width:100%;
+							
+						}
+						.wall .wall-e{
+							display:flex;
+							flex-direction:row;
+							justify-content:center;
+							align-items:center;
+							background:white;
+							width:35px;
+							box-shadow: 1px 3px 10px 1px #BDBDBD;
+							border-radius:0px 50px 50px 0px;
+							margin-left:-2px;
+								
+						}
+						.wall .wall-e p{
+							text-align:center;
+						}
+						
+						.go{
+							display:flex;
+							flex-direction:column;
+							justify-content:center;
+							align-items:center;
+							color:white;
+							text-align:center;
+							background:black;
+							border-radius:100px;
+							padding:10px;
+							width:60px;
+							height:60px;
+							margin:20px auto;
+						}
+						.go div{
+							display:flex;
+							flex-direction:row;
+							justify-content:center;
+							align-items:center;
+						}
+						.go div p{
+							font-size:20px;
+						}
+						.go p{
+							display:flex;
+							flex-direction:column;
+							justify-content:center;
+							align-items:center;
+							margin:0px;
+						}
+						.opacity{
+							opacity:0.5;
+						}
+						.go2{
+							margin-top:30px;
+							display:flex;
+							flex-direction:column;
+							justify-content:center;
+							align-items:center;
+							margin-right:auto;
+							margin-left:auto;
+						}
+						.go3{
+							font-weight:900;
+						}
+			
+							.go:hover, .from:hover{
+							animation: scaler .1s linear forwards;
+						}
+						@keyframes scaler{
+							from {transform:scale(0.9, 0.9);
+							}
+							to {transform:scale(1.0, 1.0);
+							}
+							
+					
+						}
+						.icon1{
+							width:20px;
+							margin-bottom:-18px;
+						}
+						.flight-path{
+							display:flex;
+							flex-direction:row;
+							justify-content:space-between;
+							align-items:center;					
+							margin:50px auto 0px auto;
+							position:relative;
+							padding:0px 10px;
+						
+						}
+						.dhk{
+							display:flex;
+							flex-direction:column;
+							justify-content:center;
+							align-items:flex-start;
+					
+
+						}
+						.sin{
+							display:flex;
+							flex-direction:column;
+							justify-content:center;
+							align-items:flex-end;
+						}
+						.dhk p, .sin p{
+							font-size:12px;
+							margin-top:-20px;
+							
+						}
+						.dhk p{
+							padding-left:2px;
+						}
+						.all{
+							position:relative;
+							border:1px solid transparent;
+							padding: 0px 10px;
+						}
+						.dot{
+							transform:rotate(1deg);
+							width:185px;
+							display:block;
+							margin:0 auto;
+							margin-top:-100px;
+						}
+						.switch{
+      		width:40px;
+      		height:20px;
+      		background:black;
+      		border-radius:50px;
+      		padding:2px;
+      	}
+      	.ball{
+      		width:20px;
+      		height:20px;
+      		border-radius:50px;
+      		background:white;
+      		transition: .5s;
+         }
+      .switcher{
+      	transition: .5s;
+        transform:translate(20px, 0px);
+          }
+          .flight-details{
+          	border-radius:10px;
+          	margin-right:15px;
+          	margin-left:15px;
+          	margin-top:80px;
+          	box-shadow: 1px 3px 10px 1px #BDBDBD;
+          	position:relative;
+          }
+          .flight-details h2{
+          	padding:15px 10px 5px 10px;
+          }
+          .trip{
+          	background:#ECF0F1;
+          	border-radius:0px 30px 30px 0px;
+          	width:90%;
+          	display:flex;
+							flex-direction:row;
+							justify-content:space-between;
+							align-items:center;
+							padding:0px 10px;
+							margin-bottom:-5px;
+							margin-top:-10px;
+          }
+          .row{
+          	display:flex;
+							flex-direction:row;
+							justify-content:space-between;
+							align-items:center;
+							margin-bottom:-10px;
+          }
+          .row p{
+          	font-weight:900;
+          }
+          .row img{
+          	padding-right:10px;
+          }
+          .going{
+          		display:flex;
+							flex-direction:row;
+							justify-content:space-between;
+							align-items:center;
+							padding:0px 10px;
+          }
+          .row1{
+          		display:flex;
+							flex-direction:row;
+							justify-content:flex-end;
+							align-items:center;
+							margin-bottom:-10px;
+          }
+          .row1 p{
+          	font-weight:900;
+          	
+          }
+          .row1 p span{
+          	opacity:0.5;
+          	font-size:11px;
+          }
+         
+          .row1 img{
+          		padding-right:10px;
+          		margin-top:-15px;
+          		width:15px;
+          }
+          .row img{
+          		width:15px;
+          }
+          .small-dot{
+          	width:10px;
+          	height:10px;
+          	border-radius:50px;
+          	background:#ECF0F1;
+          }
+          .add-minus{
+          	background:#ECF0F1;
+          	padding:5px 10px;
+          	border-radius:20px;
+          	display:flex;
+							flex-direction:row;
+							justify-content:space-between;
+							align-items:center;
+							height:20px;
+							width:50px;
+          }
+          .add-minus img{
+          	width:25px;
+          	
+          }
+          .line-border{
+          		width:0px;
+          		height:25px;
+          		background:transparent;
+          		border:1px dashed black;
+          		position:relative;
+          		top:17px;
+          		left:17px;
+          }
+          .stats{
+          	display:flex;
+							flex-direction:row;
+							justify-content:space-between;
+							align-items:center;
+          }
+          .status img{
+          		width:15px;
+          }
+          .coming2{
+          	margin-bottom:-10px;
+          }
+          .love h1{
+          	margin-top:30px;
+          	margin-bottom:30px;
+          }
+          .coming{
+          	margin-bottom:-40px;
+          }
+					 @media screen and (min-width:560px){
+							.all-row{
+									display:flex;
+							flex-direction:row;
+							justify-content:center;
+							align-items:center;
+							}
+							.container{
+								width:300px;
+							}
+						}
+						
+					</style>
+   </head>
+   
+   <body>
+   	
+   	<div class="all-row">
+   	
+   	<div class="container">
+   		
+   		<div class="column">
+   			
+   			<img class="travel" src="https://iamhafsah.github.io/UI-designs/flightBookingApp/img/airplane-illus_uopwq5.svg" alt="">
+   		</div>
+   		
+   		<div class="love">
+   			
+   			<h1>Love at<br>First Flight</h1>
+   			<div>
+   				
+   			<div class="from">
+   				<p><img class="icon" src="https://iamhafsah.github.io/UI-designs/flightBookingApp/img/airplane-departure.png" alt="" width="50px"><span class="text">From</span></p>
+   				<h3>Dhaka, Bangladesh</h3>
+   				
+   			</div>
+   			
+   			<div class="from">
+   				<p><img class="icon" src="https://iamhafsah.github.io/UI-designs/flightBookingApp/img/airplane-arrival.png" alt="" width="50px"><span class="text">To</span></p>
+   				<h3>Changi, Singapore</h3>
+   				
+   			</div>
+   			</div>
+   			
+   		<div class="go">
+   	
+   				<div class="go3">
+   					<p class="opacity">&gt;</p>
+   					<p>&gt;</p>
+   					</div>
+   					
+   				<p>Go</p>
+   			</div>
+   			
+   			
+   		</div>
+   		
+   		
+   	</div>
+   	
+   	<div class="container">
+   		
+   		<div class="all">
+   			
+   			<div class="stats">
+   				
+   				<div class="time">
+   					<p><b>03:00</b></p>
+   				</div>
+   				
+   				<div class="status">
+   				<img src="https://iamhafsah.github.io/UI-designs/flightBookingApp/img/network.png" alt="">
+   				<img src="https://iamhafsah.github.io/UI-designs/flightBookingApp/img/wifi.png" alt="">
+   				<img src="https://iamhafsah.github.io/UI-designs/flightBookingApp/img/battery.svg" alt="">
+   				
+   			</div>
+   			</div>
+   		
+   		<div class="flight-path">
+   			
+   			<div class="dhk">
+   				<img class="icon1" src="https://iamhafsah.github.io/UI-designs/flightBookingApp/img/airplane-departure.png" alt="">
+   				<h2>DHK</h2>
+   				<p>Dhaka, Bangladesh</p>
+   			</div>
+   			
+   			<div class="sin">
+   				<img class="icon1" src="https://iamhafsah.github.io/UI-designs/flightBookingApp/img/airplane-arrival.png" alt="">
+   				<h2>SIN</h2>
+   				<p>Changi, Singapore</p>
+   			</div>
+   			 
+   		</div>
+   		
+   		<div class="pic">
+   				<img class="dot" src="https://res.cloudinary.com/tink-frosteye/image/upload/v1589469807/webpic2_ssgbn9.png" alt="">
+   			</div>
+   			
+   			</div>
+   		
+   		
+   		<div class="flight-details">
+   			
+   			<h2>Flight Details</h2>
+   			
+   			<div class="trip">
+   				
+   				<div class="row">
+   				<img src="https://iamhafsah.github.io/UI-designs/flightBookingApp/img/roundtrip2.svg" alt="">
+   				<p>Round Trip</p>
+   				</div>
+   				
+   				<div>
+						<div class="switch">
+						<div class="ball"></div>
+			</div>
+			
+			</div>
+   			
+   			</div>
+   			
+   			<div class="going coming">
+   				
+   				<div class="row1">
+   				<img src="https://iamhafsah.github.io/UI-designs/flightBookingApp/img/calender-plane-going.svg" alt="">
+   					<p>26 March 2020, 19:45<br><span>DEPARTURE</span></p>
+   					</div>
+   					
+   					<div class="small-dot"></div>
+   			</div>
+   			
+   			
+   			<div class="line-border">
+   			</div>
+   			
+   			<div class="going coming2">
+   				
+   				<div class="row1">
+   				<img src="https://iamhafsah.github.io/UI-designs/flightBookingApp/img/calender-plane-coming.svg" alt="">
+   					<p>30 March 2020, 13:30<br><span>RETURN</span></p>
+   					</div>
+   					
+   					<div class="small-dot"></div>
+   			</div>
+   			
+   			<div class="going coming2">
+   				
+   				<div class="row1">
+   				<img src="https://iamhafsah.github.io/UI-designs/flightBookingApp/img/chair2.svg" alt="">
+   					<p>Business<br><span>CLASS</span></p>
+   					</div>
+   					
+   					<div class="small-dot"></div>
+   			</div>
+   			
+   			<div class="going coming2">
+   				
+   				<div class="row1">
+   				<img src="https://iamhafsah.github.io/UI-designs/flightBookingApp/img/person2.svg" alt="">
+   					<p>2 Persons<br><span>PASSENGER</span></p>
+   					</div>
+   					
+   					<div class="add-minus">
+   						
+   						<img src="https://iamhafsah.github.io/UI-designs/flightBookingApp/img/minus-sign.png" alt="">
+   					
+   						<img src="https://iamhafsah.github.io/UI-designs/flightBookingApp/img/plus-sign.png" alt="">
+   						
+   						</div>
+   						
+   			</div>
+   			
+   			
+   		</div>
+   		
+   		
+   		<div class="wall">
+   			
+   			<div class="wall-e go3">
+   					<p>&lt;</p>
+   					<p class="opacity">&lt;</p>
+   					</div>
+   		
+   <div class="go go2">
+   	
+   	
+   				<div class="go3">
+   					<p class="opacity">&gt;</p>
+   					<p>&gt;</p>
+   					</div>
+   					
+   				<p>Next</p>
+   			</div>
+   			
+   			</div>
+   	</div>
+   	
+   	</div>
+   <script>
+			
+			var switchMe = document.querySelector('.switch');
+			var ball = document.querySelector('.ball');
+    var num = 0;
+			
+			function mover(){
+		     num +-= 1;
+if(num%2 != 0){ ball.classList.add("switcher");
+        }
+    
+        moveIt();
+    
+    }
+    
+    function moveIt(){
+        if( num%2 == 0){
+     ball.classList.remove("switcher");
+        }
+    }
+    
+        
+			
+			switchMe.addEventListener('click', mover)
+	
+   	</script>
+   	
+   </body>
+</html>
