@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>PiggyVest Sign Up Page</title>
+      
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"> 
+
+
+<style>
+	
+    @import url('https://fonts.googleapis.com/css?family=Sen&display=swap');
+    
+          body{
+              background:#002860;
+              color:#485068;
+              font-family:'sen', arial, 'times new roman';
+              
+          }
+          h2{
+              color:#083898;
+              line-height:35px;
+              text-align:center;
+          }
+          .container{
+              position:fixed;
+              right:-35px;
+              top:-1px;
+              z-index:-1;
+          }
+          .square{
+              width:30px;
+              height:30px;
+              background:#103060;
+              transform:rotate(75deg);
+              border-radius:30px 0px 30px 0px;
+              border:15px solid #10A858;
+              
+          }
+          .circle{
+              width:50px;
+              height:50px;
+              border-radius:50px;
+              border:10px solid #2090F0;
+          }
+          .container1{
+              position:fixed;
+              left:0px;
+              top:-20px;
+              z-index:-1;
+          }
+          .square2{
+              width:50px;
+              height:50px;
+              transform:rotate(-30deg);
+              border-radius:30px 0px 30px 0px;
+              border:15px solid #D84898;
+              
+          }
+          .container2{
+              position:fixed;
+              bottom:-15px;
+              left:-25px;
+              z-index:-1;
+          }
+          .arrow1{
+              width:60px;
+              height:25px;
+              background:#7800D8;
+              transform:rotate(45deg);
+              
+          }
+          .arrow2{
+              width:60px;
+              height:25px;
+              background:#7800D8;
+              transform:rotate(-45deg);
+          }
+          .container3{
+              position:fixed;
+              bottom:0px;
+              right:-10px;
+              transform:rotate(25deg);
+              z-index:-1;
+          }
+          .all{
+              width:100%;
+              height:100%;
+              display:flex;
+              flex-direction:column;
+              z-index:100;
+              margin:0 auto
+          }
+          .piggyLogo{
+              width:200px;
+              height:50px;
+              display:block;
+              margin:40px auto;
+          }
+          .form-container{
+              display:flex;
+              flex-direction:column;
+              justify-content:center;
+              align-items:center;
+              background:white;
+              margin:5px 5px;
+              padding:25px;
+              padding-top:20px;
+              border-radius:20px 20px 20px 0px;
+          }
+  input[type="text"], input[type="email"],input[type="tel"],input[type="password"]{
+              display:flex;
+              flex-direction:column;
+              justify-content:center;
+              align-items:center;
+             width:210px;
+              height:50px;
+              background:rgba(8,56,152,0.1);
+              border-radius:5px;
+              padding:0px 10px;
+              outline:none;
+              border:1px solid transparent;
+              font-size:15px;
+              margin:0 auto;
+              opacity:0.7;
+          }
+          
+              .hearBar{
+              display:flex;
+              flex-direction:row;
+              justify-content:center;
+ 							margin:0 25px;
+              margin-bottom:15px;
+              
+              }
+              
+              .hearBar:hover{
+              	border:1px solid #4888E0;
+              	border-radius:5px;
+              }
+          
+          #hear{
+          	display:flex;
+          		 width:130px;
+              height:50px;
+              background:rgba(8,56,152,0.1);
+              border-radius:5px 0px 0px 5px;		
+              margin:auto 0px 0px 0px;
+              padding:0px 10px 0 10px;
+              outline:none;
+              border:1px solid transparent;
+              font-size:15px;
+          }
+          
+          #listItem{
+          	display:flex;
+   justify-content:center;
+          align-items:center;
+          
+              border-radius:0px 5px 5px 0px;
+              border:1px solid transparent;
+              width:75px;
+              background:rgba(8,56,152,0.1);
+             
+               }
+               
+               
+          .one-like{
+          	font-size:25px;
+          	opacity:0.5;
+          	font-weight:100;
+          }
+          .fas{
+          	opacity:0.5;
+          }
+          .fas:hover{
+          	opacity:1.0;
+          }
+          input::-webkit-calendar-picker-indicator{
+          	display:none;
+          	}
+               .footer{
+              text-align:center;    
+              margin-top:30px;
+              margin-bottom:70px;
+          }
+          
+          .footer a{
+              display:inline-block;
+              text-decoration:none;
+              color:white;
+              font-size:11px;
+              padding:5px;       
+          }
+      
+          
+          input[type="submit"]{
+          			display:block;
+          			text-align:center;
+          			margin:0 auto;
+              width:230px;
+              height:55px;
+              background:#083898;
+              border:1px solid transparent;
+              border-radius:10px 10px 10px 0px;
+              color:white;
+              font-weight:900;
+              outline:none;
+             	margin-top:-10px;
+              margin-bottom:20px;
+              
+              
+          }
+          
+          .label{
+          			display:flex;
+          			flex-direction:column;
+          			justify-content:center;
+          			padding:10px;
+          			margin:10px 15px 5px 15px;
+              font-weight:900;
+              font-size:12px;
+              margin-bottom:-20px;
+              
+          }
+          
+          .login-note{
+          font-size:13px;
+          text-align:center;
+          margin-top:-15px;
+          margin-bottom:20px;
+          line-height:20px;
+          }
+          input[list]:hover{
+          	background:blue;
+          }
+          
+          
+          
+          
+          
+          @media screen and (min-width: 500px) {
+              body{
+                  width:450px;
+                  margin:0 auto;
+              }
+              input[type="text"], input[type="email"],input[type="tel"],input[type="password"]{
+                  width:350px;
+                  
+                  }
+         
+         input[type="submit"]{
+                  width:375px;
+                  margin-top:5px; 
+                 margin-bottom:20px;
+              }
+              
+              
+              #hear{
+              	width:225px;
+              }
+              #listItem{
+              	width:125px;
+              }
+              
+              .square{
+                  width:50px;
+                  height:50px;
+                  border-radius: 50px 0px 50px 0px;
+              border:30px solid #10A858;
+              }
+                  .container{
+              position:fixed;
+              right:-60px;
+              top:-1px;
+          
+          }
+          
+          .label{
+          	
+          	margin-right:20px;
+          	margin-left:20px;
+          }
+          
+          }
+         
+     
+    </style>
+   </head>
+   
+   <body>
+       
+       <!--fixed green-->
+       
+       <div class="container">
+           
+           <div class="square"></div>
+             
+             </div>
+             
+             <div class="container1">
+                 
+           <div class="circle"></div>
+           
+           </div>
+           
+           <div class="container2">
+               
+           <div class="square2"></div>
+           </div>
+           
+           <div class="container3">
+               
+           <div class="arrow1"></div>
+           
+           <div class="arrow2"></div>
+           
+           </div>
+           
+           <!--fixed green-->
+           
+               
+               <!--start of log in page -->
+       
+      <div class="all">
+          
+          <!--PiggyVest Logo-->
+          
+          <img class="piggyLogo" src="https://dashboard.piggyvest.com/static/media/piggyvest-logo.0b78a8fa.svg" alt="">
+              
+              <!--PiggyVest Logo-->
+              
+              <!--Log in form-->
+              
+              <div class="form-container">
+                  <h2> Create a Secure Account </h2>
+         
+       <span class="login-note">Welcome to the future of Savings & Investments </span>
+                  
+                  <form action="" method="">
+                      
+                      <label class="label one">Full Name</label>
+                      
+                      <br>
+                          
+                      <input type="text" name="" value="" placeholder="Full Name"  class="name">
+                          
+                          <br>
+                              
+                          <label class="label two">Email Address</label>
+                          
+                          <br>
+                              
+                      <input type="email" name="" value="" placeholder="Email Address">
+                          
+                          <br>
+                              
+                                  
+                          <label class="label two">Phone Number</label>
+                          
+                          <br>
+                              
+                      <input type="tel" name="" value="" placeholder="Phone Number">
+                          
+                          <br>    
+                          
+                                  
+                          <label class="label two">Password</label>
+                          
+                          <br>
+                              
+                      <input type="password" name="" value="" placeholder="Password">
+                          
+                          <br>
+                          
+                          <label class="label three">Referrer Phone or Promo Code (Optional)</label>
+                          
+                          <br>
+                              
+                      <input type="text" name="" value="" placeholder="Referrer Phone or Code" class="refer">
+                          
+                          <br>
+                                       
+                          <label class="label three">How Did You Hear About Us? (Optional)</label>
+                          <br>
+                              
+                          <div id="input-div" class="hearBar">    
+                              
+                              <input type="text" name="" value="" placeholder="Click to Select" id="hear" list="where">
+         <span id="listItem">
+         	<strong class="one-like">|&nbsp;&nbsp;</strong>
+        <i class="fas fa-angle-down"></i> </span>  
+          <datalist id="where">
+    			<option value="Facebook">
+   			 <option value="Twitter">
+   			 <option value="Instagram">
+    			<option value="Friend/Family/Coworker Referral">
+    			<option value="Google Search">
+   			 <option value="Google Playstore">
+   			<option value="Online Blog">
+   			 <option value="Local Newspaper">
+    	          <option value="At an event">
+   			 <option value="Other">
+                 	</datalist>
+            
+                      
+                      </div>    
+                          
+                                 
+                            <br>
+                              
+                          <input type="submit" name="submit" value="CREATE ACCOUNT">    
+                          
+                  </form>
+                  
+                  
+              </div>
+              
+     <!--end of log in page -->
+     
+     </div>
+     
+     <div class="footer">
+         <a href="" target="_blank">Already have an account? Log in</a>
+
+     </div>         
+          
+   </body>
+   
+</html>
