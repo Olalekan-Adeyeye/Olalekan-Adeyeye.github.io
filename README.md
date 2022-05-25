@@ -1,1 +1,2 @@
-# Tink-FrOsTEYE.github.io
+# TiNK® 
+Web development starter projects repository 
